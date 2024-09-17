@@ -2,7 +2,8 @@
 - name: Lookup NetBox Device Data Based on Role
   hosts: localhost
   gather_facts: no
-
+  collection:
+   - ansible.builtin
   vars:
     netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
     netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
